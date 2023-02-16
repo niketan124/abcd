@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="a">
+        <div class="b">
+
+        </div>
+    </div>
+    <section>
+        <h1 style="font-size: 30px;">Youtube Video</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vsLyTypR6q8" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </section>
+    <hr>
+    <section>section 2</section>
+    <hr>
+    <section><iframe width="560" height="315" src="https://www.youtube.com/embed/vsLyTypR6q8"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe></section>
+    <hr>
+    <section>section 4</section>
+    <hr>
+    <div class="main">
+        <div class="login-form">
+            <h1>Welcome to login form</h1>
+            <form class="form" onsubmit="formsubmit()">
+                <input class="email" name="email" type="email" placeholder="email" required autocomplete="off">
+                <input class="password" name="password" type="password" placeholder="password" required>
+                <button type="submit">LOGIN</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var email = "", password = "";
+        var emailInput = document.getElementsByClassName("email");
+        emailInput[0].addEventListener("input", (e) => {
+            email = e.target.value
+        })
+        var passwordInput = document.getElementsByClassName("password");
+        passwordInput[0].addEventListener("input", (e) => {
+            password = e.target.value
+            console.log(email, password)
+        })
+        function formsubmit() {
+            localStorage.setItem('user', JSON.stringify({ email: email, password: password }))
+        }
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+
+</html>
